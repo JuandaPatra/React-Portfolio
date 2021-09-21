@@ -1,0 +1,60 @@
+.porto{
+    margin-top: 12vh;
+    height: 100vh;
+    // background-color: navajowhite;
+    width: 80vw;
+    margin: auto;
+
+
+    .portoCont{
+        display: flex;
+        flex-wrap: wrap;
+
+        .portoCard{
+            width: 18rem;
+            margin-left: 3%;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .porto{
+       .portoCont{
+            .portoCard{
+                margin-bottom: 5%
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .porto{
+        width: 100vw;
+        .portoCont{
+             .portoCard{
+                 margin-bottom: 3%
+             }
+         }
+     }
+}
+
+@media only screen and (min-width: 768px) {
+    .porto{
+        width: 90vw;
+     }
+}
+
+@media only screen and (min-width: 992px) {
+    .porto{
+        width: 100vw;
+     }
+}
+
+@media only screen and (min-width: 1200px) {
+    .porto{
+        width: 80vw;
+        height: 5vh;
+     }
+
+}

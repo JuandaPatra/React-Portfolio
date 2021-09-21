@@ -1,0 +1,39 @@
+.footer{
+    margin-top: 90%;
+    background-color: black;
+    bottom: 0;
+    height: 20vh;
+    width: 100%;
+
+    .footer-caption{
+        margin: auto;
+        width: 60vw;
+        display: flex;
+        flex-wrap: wrap;
+
+        .footer-caption>p{
+            color: white;
+            margin: 1%;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer{
+        margin-top: 340vw;
+        height: 50vh;
+        width: 100%;
+    
+        .footer-caption{
+            margin: auto;
+            width: 60vw;
+            display: flex;
+            flex-wrap: wrap;
+    
+            .footer-caption>p{
+                color: white;
+                margin: 2%;
+            }
+        }
+    }
+}

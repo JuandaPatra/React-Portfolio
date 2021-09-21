@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Switch, Route} from "react-router-dom"
+import {Image}from "react-bootstrap"
+import "./style/app.scss"
+import {connect} from "react-redux"
+import NavigationBar from "./components/navigationBar";
+import PortfolioPage from "./pages/portfolio"
+import FooterComponent from "./components/footer";
+import DetailPage from "./pages/detail";
+import About from "./pages/about";
+class App extends React.Component{
+  render(){
+    console.log(this.props.profile)
+    return(
+      <div className="home">
+        <NavigationBar/>
+        <div className="banner">
+          <div className="banner-caption">
+          <h1>Rahmad Juanda Patra</h1>
+          <h1>FrontEnd Developer</h1>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          </div>
+          <div>
+          <Image src={this.props.profile} roundedCircle className="prof-pic" />
+          </div>
+
+        </div>
+        <Switch>
+          <Route path="/" component={PortfolioPage} exact/>
+          <Route path="/detail" component={DetailPage}/>
+          <Route path="/about" component={About}/>
+        </Switch>
+
+        {/* <PortfolioPage/> */}
+
+        <FooterComponent/>
+        
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps=(state)=>{
+  return{
+    profile : state.profileReducer.profile
+  }
+}
+
+export default connect(mapStateToProps) (App)
